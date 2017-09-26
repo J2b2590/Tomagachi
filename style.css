@@ -1,0 +1,24 @@
+body, html {
+    height: 100%;
+    background: url("https://vignette3.wikia.nocookie.net/ssb/images/a/a1/SSBWU_Yoshi%27s_Island.png/revision/latest?cb=20151113183434")
+    no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+
+.row{
+
+
+}
+
+button{
+
+	
+	margin-top: 50px;
+	width: 75%;
+	height: 150%;
+	border-radius: 25px;
+
+}
+
