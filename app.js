@@ -1,13 +1,16 @@
 console.log('Gooooood morning Vietnam')
 
 $('button').on('click', (e) => {
- 	
-   setTimer()
+ 	setHunger()
 
     console.log('the click is working')
 
 })
 let time = 0;
+let hunger = 0;
+let sleepiness = 0;
+let bordem = 0;
+let age = 0;
 
 
 class Tomagotchi {
@@ -46,7 +49,7 @@ class Tomagotchi {
 		if(this.sleepiness <= 8){
 			alert('SLEEEP!')
 		}
-
+		return(this.sleepiness)
 	}
 	
 
@@ -81,30 +84,6 @@ class Tomagotchi {
 
 }
 
-const setUpRound = () => {
-    $('.squares').empty();
-    $('#round').text(`round: ${round}`)
-    
-	
-    if(round === 1){
-        createSquares(50);
-        time = 5;
-    }else if (round === 2){
-        createSquares(100);
-        time = 4;
-    }else if (round === 3){
-        createSquares(150);
-        time = 3;
-    }else{
-        createSquares(250)
-        time = 2;
-    }
-    
-}
-
-	
-
-
 const lilYoshi = new Tomagotchi('lilYoshi', 0, 0, 0, 0, [
 {
 	name: 'tongue flick'
@@ -114,18 +93,43 @@ const lilYoshi = new Tomagotchi('lilYoshi', 0, 0, 0, 0, [
 
 console.log(lilYoshi)
 
+// 
 
-
-const setTimer = () => {
+const setHunger = () => {
     const timer = setInterval(() =>{
-        time++
+       time++
 
-        
-        $('#timer').text(`Timer: ${time}s`)
-    }, 1000)
+
+        $('#timer').text(`Hunger: ${time}`)
+    }, 3000)
 
 
 }
+setHunger()
+
+const setPlay = () => {
+    const timer2 = setInterval(() =>{
+       time++
+
+        
+        $('#timer2').text(`Play: ${time}`)
+    }, 3000)
+
+
+}
+setPlay()
+
+const setSleep = () => {
+    const timer3 = setInterval(() =>{
+       time++
+
+        
+        $('#timer3').text(`Sleep: ${time}`)
+    }, 3000)
+
+
+}
+setSleep()
 
 
 

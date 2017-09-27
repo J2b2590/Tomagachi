@@ -3,7 +3,17 @@ body, html {
     background: url("https://vignette3.wikia.nocookie.net/ssb/images/a/a1/SSBWU_Yoshi%27s_Island.png/revision/latest?cb=20151113183434")
     no-repeat center center fixed;
     background-size: cover;
+
 }
+
+
+
+.container{
+	background-position: center;
+	margin-right: 243px
+
+}
+
 
 
 
@@ -12,13 +22,28 @@ body, html {
 
 }
 
+
+button:focus{
+	outline: 0;
+}
+
 button{
 
-	
 	margin-top: 50px;
 	width: 75%;
-	height: 150%;
-	border-radius: 25px;
+	height: 190%;
+	border-radius: 150px;
+	border: none;
+	background-color: rgba(220,220,220,0);
+	background-image: url('http://vignette2.wikia.nocookie.net/nintendo/images/3/36/Yoshi_Egg.png/revision/latest?cb=20100620184916&path-prefix=en');
+    
 
 }
 
+.yoshi{
+
+	margin-top: 180px;
+	margin-left: 570px;
+	resize: both;
+	overflow: auto;
+}
