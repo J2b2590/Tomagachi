@@ -1,10 +1,25 @@
 console.log('Gooooood morning Vietnam')
 
-$('button').on('click', (e) => {
- 	setHunger()
+$('#feedButton').on('click', (e) => {
 
+ 	lilYoshi.feed()
+   
     console.log('the click is working')
+})
 
+$('#playButton').on('click', (e) =>{
+
+	lilYoshi.play()
+
+	console.log('playbutton')
+})
+
+$('#sleepButton').on('click',(e) => {
+
+
+	lilYoshi.sleep()
+
+	console.log('sleepButton')
 })
 let time = 0;
 let hunger = 0;
@@ -13,76 +28,82 @@ let bordem = 0;
 let age = 0;
 
 
+
 class Tomagotchi {
-	constructor(name, hunger, sleepiness, bordem, age, actions){
+	constructor(name, hunger, sleepiness, boredem, age, actions){
 		this.name = name;
-		this.hunger = 0;
-		this.sleepiness = 0;
-		this.bordem = 0;
-		this.age = 0;
+		this.hunger = hunger;
+		this.sleepiness = sleepiness;
+		this.boredem = boredem;
+		this.age = age;
 		this.actions = {};
+
+
+	}	
+
+	setUpTimer(){
+		const timer = setInterval(() =>{
+   			this.age += 1
+   			this.hunger++
+   			this.sleepiness++
+  			this.boredem++
+
+
+  		if(this.hunger === 10 || this.sleepiness === 10 || this.boredem === 10){
+  			clearInterval(timer)
+  			alert ('Yoshi has died')
+  		}
+
+      	    $('#timer').text(this.hunger)
+      	  	$('#timer2').text(this.boredem)
+  	 		$('#timer3').text(this.sleepiness)
+  	 		$('#timer4').text('Yoshi age: ' + this.age)
+		}, 2000)
 	}
 
-	bored(play){
-
-		if(this.bordem <= 3){
-			alert('bored')
-		}
-		if(this.bordem <= 5){
-			alert('BORED')
-		}
-		if(this.bordem <= 8){
-			alert('BORED!')
-		}
-		return (this.bordem)
+	feed(){
+		this.hunger--
 	}
-	
-
-	sleep(ZzZzZz){
-
-		if(this.sleepiness <= 3){
-			alert('sleep')
-		}
-		if(this.sleepiness <= 5){
-			alert('SLEEP')
-		}
-		if(this.sleepiness <= 8){
-			alert('SLEEEP!')
-		}
-		return(this.sleepiness)
+	play(){
+		this.boredem--
 	}
-	
-
-	feed(hungry){
-
-		if(this.hunger <= 3){
-			alert('feed me')
-		}
-		if(this.hunger <= 5){
-			alert('FEED ME')
-		}
-		if(this.hunger <= 8){
-			alert('FEED ME!')
-		}
-
-
-}
-
-
-	killMeter(dead){
-
-		if(this.hunger === 	10){
-		alert('Yoshi has died')
-		}
-		if(this.sleepiness === 10){
-		alert('Yoshi has died')
-		}
-		if(this.bordem === 10){
-		alert('Yoshi has died')
-		}
+	sleep(){
+		this.sleepiness--
 	}
 
-}
+	// Morph(){
+	// 	this.age > 5
+	// 	return ''
+	// }
+	// killMeter (dead) {
+
+	// if(this.hunger === 	10){
+	// alert('Yoshi has died')
+	// }
+	// if(this.sleepiness === 10){
+	// alert('Yoshi has died')
+	// }
+	// if(this.boredem === 10){
+	// alert('Yoshi has died')
+	// }
+
+
+
+}	
+
+
+//  killMeter (dead) {
+
+// 	if(this.hunger === 	10){
+// 	alert('Yoshi has died')
+// 	}
+// 	if(this.sleepiness === 10){
+// 	alert('Yoshi has died')
+// 	}
+// 	if(this.boredem === 10){
+// 	alert('Yoshi has died')
+// 	}
+// }
 
 const lilYoshi = new Tomagotchi('lilYoshi', 0, 0, 0, 0, [
 {
@@ -91,45 +112,38 @@ const lilYoshi = new Tomagotchi('lilYoshi', 0, 0, 0, 0, [
 
 }])
 
+lilYoshi.setUpTimer()
+
 console.log(lilYoshi)
 
-// 
-
-const setHunger = () => {
-    const timer = setInterval(() =>{
-       time++
 
 
-        $('#timer').text(`Hunger: ${time}`)
-    }, 3000)
+// }
+// setHunger()
 
-
-}
-setHunger()
-
-const setPlay = () => {
-    const timer2 = setInterval(() =>{
-       time++
+// const setPlay = () => {
+//     const timer2 = setInterval(() =>{
+//        time++
 
         
-        $('#timer2').text(`Play: ${time}`)
-    }, 3000)
+//         $('#timer2').text(`Play: ${time}`)
+//     }, 3000)
 
 
-}
-setPlay()
+// }
+// setPlay()
 
-const setSleep = () => {
-    const timer3 = setInterval(() =>{
-       time++
+// const setSleep = () => {
+//     const timer3 = setInterval(() =>{
+//        time++
 
         
-        $('#timer3').text(`Sleep: ${time}`)
-    }, 3000)
+//         $('#timer3').text(`Sleep: ${time}`)
+//     }, 3000)
 
 
-}
-setSleep()
+// }
+// setSleep()
 
 
 

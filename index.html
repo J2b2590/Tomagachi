@@ -8,10 +8,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet">
 
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 </head>
 <body>
+
 
 
 
@@ -20,9 +22,24 @@
 	<div class="row">
 
 
-		<div id='feed' class='col-md-4'><button type="button"><span id='timer'>Timer: 0s</span><h1>FEED</h1></button></div>
-		<div id='play' class='col-md-4'><button type="button"><span id='timer2'>Timer: 0s</span><h1>PLAY</h1></button></div>
-		<div id='sleep' class='col-md-4'><button type="button"><span id='timer3'>Timer: 0s</span><h1>SLEEP</h1></button></div>
+		<div id='feed' class='col-md-4'>
+			<button id='feedButton' type="button">
+				<span id='timer'>Hunger</span>
+				<h1>FEED</h1>
+			</button>
+		</div>
+		<div id='play' class='col-md-4'>
+			<button id='playButton' type="button">
+				<span id='timer2'>play</span>
+				<h1>PLAY</h1>
+			</button>
+		</div>
+		<div id='sleep' class='col-md-4'>
+			<button id='sleepButton' type="button">
+				<span id='timer3'>sleep</span>
+				<h1>SLEEP</h1>
+			</button>
+		</div>
 		
 	
 
@@ -36,7 +53,7 @@
 
 </div>
 
-<div class='yoshi'>
+<div class='yoshi'> <div>
 	
 	<img src="http://www.mariomayhem.com/bowsers_blog/wp-content/uploads/2014/09/tumblr_moc5vcYfkz1rrftcdo1_500.gif">
 
@@ -46,7 +63,11 @@
 
 
 	
+<div id='ages'> 
 
+					<h1 id="timer4"> </h1>
+	
+				</div>
 
 	<script src="app.js"></script>
 </body>

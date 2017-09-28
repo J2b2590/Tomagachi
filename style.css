@@ -22,6 +22,10 @@ body, html {
 
 }
 
+h1{
+	font-family: 'Wendy One', sans-serif;
+
+}
 
 button:focus{
 	outline: 0;
@@ -47,3 +51,46 @@ button{
 	resize: both;
 	overflow: auto;
 }
+
+#timer{
+	font-family: 'Wendy One', sans-serif;
+	color: rgba:();
+}
+
+#timer2{
+	font-family: 'Wendy One', sans-serif;
+}
+
+#timer3{
+	font-family: 'Wendy One', sans-serif;
+}
+
+
+
+
+
+
+
+#ages{
+
+	margin-right: 100px;
+	margin-top: 100px;
+	float: right;
+	color: white;
+	resize: both;
+	overflow: auto;
+	font-family: 'Wendy One', sans-serif;
+	
+
+
+
+}
+
+
+
+
+
+
+
+
+
