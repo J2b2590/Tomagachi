@@ -16,11 +16,36 @@ $('#playButton').on('click', (e) =>{
 
 $('#sleepButton').on('click',(e) => {
 
-
+	
 	lilYoshi.sleep()
 
 	console.log('sleepButton')
 })
+
+let clicked = 1;
+
+const firstBody = () => {
+    $('body').css('background-image', "url('https://vignette3.wikia.nocookie.net/ssb/images/a/a1/SSBWU_Yoshi%27s_Island.png/revision/latest?cb=20151113183434')");
+};
+const secondBody = () => 
+    $('body').css('background-image', "url('https://ak3.picdn.net/shutterstock/videos/1938463/thumb/1.jpg')");
+};
+const nestedFunctionsCauseFuckIt = () => {
+    if (clicked === 0){
+        firstBody();
+        clicked = 1;
+    }else if(clicked === 1){
+        secondBody();
+        clicked = 0;
+    }; 
+};
+$('#sleepButton').click(nestedFunctionsCauseFuckIt);
+
+
+
+
+
+
 let time = 0;
 let hunger = 0;
 let sleepiness = 0;
@@ -48,6 +73,16 @@ class Tomagotchi {
    			this.sleepiness++
   			this.boredem++
 
+  			if(this.age > 5){
+  			$('.yoshi').addClass('hidden')
+  			$('.mario').removeClass('hidden')
+  			
+
+  			}
+
+  			
+
+
 
   		if(this.hunger === 10 || this.sleepiness === 10 || this.boredem === 10){
   			clearInterval(timer)
@@ -62,13 +97,18 @@ class Tomagotchi {
 	}
 
 	feed(){
-		this.hunger--
+		this.hunger = 1
 	}
 	play(){
-		this.boredem--
+		this.boredem = 1
 	}
 	sleep(){
-		this.sleepiness--
+		this.sleepiness = 1
+
+	}
+	nightTime(){
+		$('body').removeClass('blackout')
+
 	}
 
 	// Morph(){
