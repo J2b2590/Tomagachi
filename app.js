@@ -16,34 +16,11 @@ $('#playButton').on('click', (e) =>{
 
 $('#sleepButton').on('click',(e) => {
 
-	
+	$('body').toggleClass('blackout')
 	lilYoshi.sleep()
 
 	console.log('sleepButton')
 })
-
-let clicked = 1;
-
-const firstBody = () => {
-    $('body').css('background-image', "url('https://vignette3.wikia.nocookie.net/ssb/images/a/a1/SSBWU_Yoshi%27s_Island.png/revision/latest?cb=20151113183434')");
-};
-const secondBody = () => 
-    $('body').css('background-image', "url('https://ak3.picdn.net/shutterstock/videos/1938463/thumb/1.jpg')");
-};
-const nestedFunctionsCauseFuckIt = () => {
-    if (clicked === 0){
-        firstBody();
-        clicked = 1;
-    }else if(clicked === 1){
-        secondBody();
-        clicked = 0;
-    }; 
-};
-$('#sleepButton').click(nestedFunctionsCauseFuckIt);
-
-
-
-
 
 
 let time = 0;
